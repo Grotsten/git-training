@@ -7,8 +7,10 @@ fun computeFibbonaciNumber(position: Int?, recursion: Boolean = false): Int {
         notNullPosition = 1
     }
     if (position == 0) return 0
-    if (position < 0) {
-        return computeNegativeFibbonachi(position)
+    if (position != null) {
+        if (position < 0) {
+            return computeNegativeFibbonachi(position)
+        }
     }
     var i = 1
     var j = 1
