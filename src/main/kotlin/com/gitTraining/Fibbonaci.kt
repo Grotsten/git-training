@@ -16,18 +16,14 @@ fun computeFibbonaciNumber(position: Int?, recursion: Boolean = false): Int {
     if (notNullPosition <= 2) return 1
 
 
-    var currentPosition = 2
-    while (currentPosition < notNullPosition) {
-        val temp = i
-        i = j
-        j += temp
+
     if (position == 1 || position == 2) return 1
 
     var smallFibbonachiNumber = 1
     var largeFibbonachiNumber = 1
 
     var currentPosition = 2
-    while (currentPosition < position) {
+    while (currentPosition < position!!) {
         val nextFibbonachiNumber = smallFibbonachiNumber + largeFibbonachiNumber
         smallFibbonachiNumber = largeFibbonachiNumber
         largeFibbonachiNumber = nextFibbonachiNumber
