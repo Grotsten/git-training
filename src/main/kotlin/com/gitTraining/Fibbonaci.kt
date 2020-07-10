@@ -12,8 +12,6 @@ fun computeFibbonaciNumber(position: Int?, recursion: Boolean = false): Int {
             return computeNegativeFibbonachi(position)
         }
     }
-    var i = 1
-    var j = 1
 
     if (notNullPosition <= 2) return 1
 
@@ -23,9 +21,19 @@ fun computeFibbonaciNumber(position: Int?, recursion: Boolean = false): Int {
         val temp = i
         i = j
         j += temp
+    if (position == 1 || position == 2) return 1
+
+    var smallFibbonachiNumber = 1
+    var largeFibbonachiNumber = 1
+
+    var currentPosition = 2
+    while (currentPosition < position) {
+        val nextFibbonachiNumber = smallFibbonachiNumber + largeFibbonachiNumber
+        smallFibbonachiNumber = largeFibbonachiNumber
+        largeFibbonachiNumber = nextFibbonachiNumber
         currentPosition ++
     }
-    return j
+    return largeFibbonachiNumber
 }
 
 fun computeFibbonachiArray(start: Int, end: Int, efficient: Boolean = false): List<Int> {
