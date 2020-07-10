@@ -53,3 +53,13 @@ fun computeNegativeFibbonachi(position:Int): Int {
     val absoluteResult = computeFibbonaciNumber(-position)
     return if (resultIsNegative) (absoluteResult * -1) else absoluteResult
 }
+
+fun recursiveFibbonachi(initialPosition: Int, left: Int = 0, right: Int = 1, position: Int = initialPosition): Int {
+    if (initialPosition == 0) return 0
+    if (position == 0) return left
+    if (initialPosition > 0) {
+        return recursiveFibbonachi(initialPosition, right, left + right, position - 1)
+    } else {
+        return recursiveFibbonachi(initialPosition, right - left, left, position + 1)
+    }
+}
